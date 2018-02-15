@@ -66,7 +66,7 @@ module Paranoia
         end
         @_disable_counter_cache = false
         result
-      end
+      end || (raise ActiveRecord::Rollback)
     end
   end
   alias_method :destroy, :paranoia_destroy
